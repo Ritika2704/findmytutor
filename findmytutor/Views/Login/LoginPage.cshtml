@@ -3,5 +3,73 @@
     ViewBag.Title = "LoginPage";
 }
 
-<h2>LoginPage</h2>
+<html lang="en">
+<head>
+    <title>findmytutor</title>
+    
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon shortcut icon" type="image/x-icon" href="https://epaper.andhrajyothy.com//img/logo/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://epaper.andhrajyothy.com//Content/summit-icon-cr/summit-icon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link href="https://epaper.andhrajyothy.com//Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://epaper.andhrajyothy.com//Content/jquery-ui.css" rel="stylesheet" />
+    <link href="https://epaper.andhrajyothy.com//Content/popups.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://epaper.andhrajyothy.com//Content/loginstyle.css">
+    
+</head>
+<body>
+    <section>
+        <div class="header text-center">
+            <header style="font-size: xx-large; color: black;">
+                findmytutor
+            </header>
+        </div>
+        <div class="content login-top">
+            <div class="login-box scrollbar">
+                <p class="p_continue">Please Sign In to Continue</p>
+                
+                <form id="loginform">
+                    
+                    <div class="form-input">
+                        <input id="txtNumber1" placeholder="Email" name="Email" class="form-control">
+                    </div>
+                    <div class="form-input">
+                        <input type="password" id="txtPassword" placeholder="Password" name="Password" class="form-control" required />
+                    </div>
+                    <div class="rem-forgot">
+                        <div class="form-check" style="margin-right: 100px;margin-top: 10px;">
+                            <input checked="checked" class="form-check-input" type="checkbox">
+                            
+                            <label class="form-check-label" for="chkSignIn">
+                                Keep me signed in
+                            </label>
+                        </div>
+                        <a class="forgot-password" style="cursor:pointer">Forgot Password ?</a>
+                    </div>
+                    <button type="submit" class="lrbtn">Log In</button>
+                    
+                    
+                    <p class="or">
+                        Or
+                    </p>
+                    <ul class="social-media">
+                        <li>
+                            <a id="signinButton" href="#">
+                            <img class="google" src="https://epaper.andhrajyothy.com//img/google_1.png" />
+                            </a>
+                        </li>
+                        <li>
+                            <a id="btnFbLogin" href="#">
+                            <img src="https://epaper.andhrajyothy.com//img/facebook_1.png" />
+                            </a>
+                        </li>
+                    </ul>
+                    <p>Don't Have An Account ?&nbsp;<a href="https://localhost:44396/Register/RegisterPage"> Sign Up</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
+ </body>
+</html>
 
