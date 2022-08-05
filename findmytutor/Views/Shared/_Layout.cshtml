@@ -2,14 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, <i></i>nitial-scale=1.0">
     <title>@ViewBag.Title - find my tutor</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @*<link rel="stylesheet" href="app.css" type="text/css" />*@
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: blue; font-weight: bold;">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:blue; font-weight: bold;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
@@ -18,12 +19,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("LOGO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li >@Html.ActionLink("Sign In", "LoginPage", "Login")</li>
-                    <li >@Html.ActionLink("Sign Up", "RegisterPage", "Register")</li>
+                    @*@<li >@Html.ActionLink("Sign Up", "RegisterPage", "Register")</li>*@
                 </ul>
                
                   @*<input class="search" style="box-sizing: content-box; margin: 12px; border-radius: 4px; border: none; line-height: 24px; outline: 0;  "type="text" name="search" placeholder="Search ">*@
