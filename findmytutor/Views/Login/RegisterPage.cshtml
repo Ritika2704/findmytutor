@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-signin-client_id" content="963433840248-r8ln1nk1v541je2egehqj8dnsqqcc9ei.apps.googleusercontent.com" />
-    <title>Andhrajyothy ePaper</title>
+    <title>Find My Tutor Application</title>
     <meta name="author" content="">
     <link rel="manifest" href="/manifest.json">
 
@@ -21,9 +21,9 @@
 </head>
 <body>
     <section>
-        <div class="header text-center">            
-            <header style="font-size: xx-large; color: black;">Findmytutor</header>
-        </div>
+        @*<div class="header text-center">
+                <header style="font-size: xx-large; color: black;">Findmytutor</header>
+            </div>*@
         <div class="content register-top">
             <div class="register-box scrollbar">
                 <p class="p_continue">Please Register to Continue</p>
@@ -59,14 +59,15 @@
                             <input type="text" name="Address" id="txtaddress" class="form-control" placeholder="Address" required />
                         </div>
                         <button type="submit" class="lrbtn">Sign Up</button>
-                        <p class="or">
-                            Or
-                        </p>
-                        <ul class="social-media">
-                            <li><img class="google" src="https://epaper.andhrajyothy.com//img/google_1.png" /></li>
-                            <li><img src="https://epaper.andhrajyothy.com//img/facebook_1.png" /></li>
-                        </ul>
-                        <p class="">Already Have An Account ?.<a href="/Login/LoginPage">Sign In</a></p>
+                        @*<p class="or">
+                                Or
+                            </p>*@
+                        @*<ul class="social-media">
+                                <li><img class="google" src="#" /></li>
+                                <li><img src="#" /></li>
+                            </ul>*@
+                        @*<p class="">Already Have An Account ?.<a href="/Login/LoginPage">Sign In</a></p>*@
+                        <p class="">Already Have An Account ?.@Html.ActionLink("Sign In", "LoginPage", "Login", new { area = "" }, new { @class = "" })</p>
                     </form>
                 </div>
             </div>
@@ -75,3 +76,12 @@
 </body>
 </html>
 
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#loginpagelinkid").addClass("myactive");
+            $("#homelinkid").removeClass("myactive");
+        });
+    </script>
+}

@@ -15,6 +15,7 @@ namespace findmytutor.DataAccess
         }
 
         public DbSet<States> States { get; set; }
+        public DbSet<cities> cities { get; set; }
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
         //{

@@ -5,3 +5,13 @@
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#homelinkid").addClass("myactive");       
+            $("#loginpagelinkid").removeClass("myactive");
+        });
+    </script>
+}

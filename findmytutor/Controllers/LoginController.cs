@@ -10,8 +10,12 @@ namespace findmytutor.Controllers
     public class LoginController : Controller
     {
         private FindMyTutorContext db = new FindMyTutorContext();
-        // GET: Login
         public ActionResult LoginPage()
+        {
+            return View();
+        }
+
+        public ActionResult RegisterPage()
         {
             return View();
         }
@@ -19,6 +23,10 @@ namespace findmytutor.Controllers
         public ActionResult GetStates()
         {
             return Json(db.States.ToList(), JsonRequestBehavior.AllowGet);
+        }
+        public ActionResult GetCities()
+        {
+            return Json(db.cities.ToList(), JsonRequestBehavior.AllowGet);
         }
     }
 }
