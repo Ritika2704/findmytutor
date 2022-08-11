@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using findmytutor.Models;
 
 namespace findmytutor.Controllers
 {
@@ -12,12 +13,43 @@ namespace findmytutor.Controllers
         private FindMyTutorContext db = new FindMyTutorContext();
         public ActionResult LoginPage()
         {
-            return View();
+            LoginModel login = new LoginModel();
+            return View(login);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AuthenticateUser(LoginModel login)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    //Authenticate user against DB
+                    string currentEmail = login.Email;
+                    string currentPassword = login.Password;
+
+                    //bool result = AuthenticateUser(currentEmail, currentPassword);
+                    //bool result = false;
+                    //if true, then redirect to next page
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Invalid Model State");
+                }
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            return View("LoginPage", login);
         }
 
         public ActionResult RegisterPage()
         {
-            return View();
+            RegisterModel register = new RegisterModel();
+            return View(register);
         }
 
         public ActionResult GetStates()

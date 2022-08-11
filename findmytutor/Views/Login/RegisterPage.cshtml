@@ -1,4 +1,5 @@
-﻿
+﻿@using findmytutor.Models;
+@model RegisterModel
 @{
     ViewBag.Title = "RegisterPage";
 }
@@ -13,11 +14,11 @@
     <link rel="manifest" href="/manifest.json">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/RegisterPage(1).css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/Content/RegisterPage(1).css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
     <link href="~/Content/RegisterPage(3).css" rel="stylesheet" />
     <link href="~/Content/RegisterPage(4).css" rel="stylesheet" />
-    <link rel="stylesheet" href="~/Content/RegisterPage(2).css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/RegisterPage(2).css" />
 </head>
 <body>
     <section>
@@ -50,22 +51,23 @@
                             <input id="txtconfrmPassword" type="password" name="confrmPassword" class="form-control" placeholder="Confirm Password">
                         </div>
                         <div class="form-input">
+                            <input type="text" name="Address" id="txtaddress" class="form-control" placeholder="Address" required />
+                        </div>
+                        <div class="form-input">
                             <input type="text" name="State" id="txtstate" class="form-control" placeholder="State" required />
                         </div>
                         <div class="form-input">
                             <input type="text" name="City" id="txtcity" class="form-control" placeholder="City" required />
                         </div>
-                        <div class="form-input">
-                            <input type="text" name="Address" id="txtaddress" class="form-control" placeholder="Address" required />
-                        </div>
+
                         <button type="submit" class="lrbtn">Sign Up</button>
                         @*<p class="or">
-                                Or
-                            </p>*@
-                        @*<ul class="social-media">
-                                <li><img class="google" src="#" /></li>
-                                <li><img src="#" /></li>
-                            </ul>*@
+                        Or
+                        </p>*@
+                                        @*<ul class="social-media">
+                            <li><img class="google" src="#" /></li>
+                            <li><img src="#" /></li>
+                        </ul>*@
                         @*<p class="">Already Have An Account ?.<a href="/Login/LoginPage">Sign In</a></p>*@
                         <p class="">Already Have An Account ?.@Html.ActionLink("Sign In", "LoginPage", "Login", new { area = "" }, new { @class = "" })</p>
                     </form>
