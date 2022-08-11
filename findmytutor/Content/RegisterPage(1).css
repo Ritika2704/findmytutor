@@ -1,0 +1,215 @@
+﻿@font-face {
+    font-family: summit-iconuni;
+    src: url(summit-iconuni.woff) format('woff'),url(summit-iconuni.woff2) format('woff2')
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+*, ::before, ::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit
+}
+
+.si {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: summit-iconuni;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+    .si::before {
+        position: relative;
+        top: 1px
+    }
+
+.si-calendar:before {
+    content: "\f000"
+}
+
+.si-dowload-edition:before {
+    content: "\f001"
+}
+
+.si-dowload-page:before {
+    content: "\f002"
+}
+
+.si-location:before {
+    content: "\f003"
+}
+
+.si-fullview:before {
+    content: "\f004"
+}
+
+.si-thumbview:before {
+    content: "\f005"
+}
+
+.si-search::before {
+    content: "\f006"
+}
+
+.si-menu:before {
+    content: "\f007"
+}
+
+.si-publication:before {
+    content: "\f00a"
+}
+
+.si-articleview:before {
+    content: "\f00b"
+}
+
+.si-pages:before {
+    content: "\f00c"
+}
+
+.si-help::before {
+    content: "\f028"
+}
+
+.si-help-i::before {
+    content: "\f033"
+}
+
+.si-next::before {
+    content: "\f031"
+}
+
+.si-user::before {
+    content: "\f02a"
+}
+
+.si-image::before {
+    content: "\f01a"
+}
+
+.si-text::before {
+    content: "\f01c"
+}
+
+.si-text::before {
+    content: "\f01c"
+}
+
+.si-expand::before {
+    content: "\f02b"
+}
+
+.si-heart::before {
+    content: "\f00d"
+}
+
+.si-heart-fill::before {
+    content: "\f00e"
+}
+
+.si-cloud-download::before {
+    content: "\f010"
+}
+
+.si-cloud-download-full::before {
+    content: "\f011"
+}
+
+.si-font-plus::before {
+    content: "\f012"
+}
+
+.si-font-minus::before {
+    content: "\f02c"
+}
+
+.si-audio-listen::before {
+    content: "\f01b"
+}
+
+.si-audio-pause::before {
+    content: "\f01e"
+}
+
+.si-cross::before {
+    content: "\f009"
+}
+
+.si-facebook::before {
+    content: "\f00f"
+}
+
+.si-twitter::before {
+    content: "\f016"
+}
+
+.si-mail::before {
+    content: "\f035"
+}
+
+.si-copy::before {
+    content: "\f014"
+}
+
+.si-audio-on::before {
+    content: "\f020"
+}
+
+.si-audio-off::before {
+    content: "\f01f"
+}
+
+.si-share::before {
+    content: "\f019"
+}
+
+.si-watsapp::before {
+    content: "\f015"
+}
+
+.si-watsapp-o::before {
+    content: "\f036"
+}
+
+.si-hd-on::before {
+    content: "\f022"
+}
+
+.si-hd-off::before {
+    content: "\f021"
+}
+
+.si-on-bg::before {
+    content: "\f023"
+}
+
+.si-chevron-left::before {
+    content: "\f02d"
+}
+
+.si-look::before {
+    content: "\f044"
+}
+
+.si-email::before {
+    content: "\f035"
+}
+
+.si-chevron-right::before {
+    content: "\f02e"
+}
+
+.si-phone::before {
+    content: "\f045"
+}

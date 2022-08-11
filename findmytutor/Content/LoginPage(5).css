@@ -1,0 +1,557 @@
+﻿.form-control {
+    border-radius: 0
+}
+
+.btn_flat {
+    border-radius: 0
+}
+
+.base .modal-content {
+    border-radius: 0
+}
+
+.base .modal-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #231f20;
+    background-color: #231f20;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.base .modal-title {
+    color: #fff
+}
+
+.base .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    opacity: .5
+}
+
+    .base .close:focus, .base .close:hover {
+        opacity: unset
+    }
+
+    .base .close > .si {
+        color: #fff
+    }
+
+.base .modal-body {
+    min-height: 100px
+}
+
+.base .modal-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.fpwd .modal-dialog {
+    margin-top: 110px
+}
+
+.artcleslist {
+    z-index: 10000
+}
+
+    .artcleslist .modal-dialog {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden
+    }
+
+    .artcleslist .modal-content {
+        border-radius: 0;
+        height: 100%;
+        border: 0
+    }
+
+    .artcleslist .modal-header {
+        font-size: 16px
+    }
+
+    .artcleslist .modal-body {
+        min-height: 100px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        height: calc(100% - 50px);
+        padding: 0
+    }
+
+    .artcleslist .modal-header .center-bar {
+        color: #fff
+    }
+
+        .artcleslist .modal-header .center-bar > span {
+            display: inline-block;
+            border-right: 1px solid #9e9e9e;
+            padding: 0 15px
+        }
+
+            .artcleslist .modal-header .center-bar > span:last-child {
+                border-right: 0
+            }
+
+    .artcleslist .page_header {
+        font-size: 16px;
+        color: red;
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px
+    }
+
+    .artcleslist .page_content {
+        display: block;
+        margin-bottom: 15px
+    }
+
+        .artcleslist .page_content:last-child {
+            margin-bottom: 0
+        }
+
+        .artcleslist .page_content ul {
+            padding: 0;
+            margin: 0;
+            list-style: none
+        }
+
+        .artcleslist .page_content > ul > li {
+            display: block
+        }
+
+            .artcleslist .page_content > ul > li .storybox {
+                display: block;
+                overflow: hidden;
+                padding: 10px;
+                border-bottom: 1px solid #d5d5d5
+            }
+
+        .artcleslist .page_content:last-child > ul > li:last-child .storybox {
+            border-bottom: 0
+        }
+
+        .artcleslist .page_content > ul > li.active .storybox {
+            background-color: #f0f0f0
+        }
+
+        .artcleslist .page_content > ul > li .storybox > img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            object-position: center;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            float: left
+        }
+
+        .artcleslist .page_content > ul > li .storybox > .storytitle {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #303030;
+            font-weight: 700
+        }
+
+            .artcleslist .page_content > ul > li .storybox > .storytitle:hover, .artcleslist .page_content > ul > li .storybox > .storytitle:focus {
+                text-decoration: none
+            }
+
+        .artcleslist .page_content > ul > li .storybox > .summarystory {
+            font-size: 14px;
+            display: block;
+            color: #606060
+        }
+
+.base.confirm .modal-body {
+    font-size: 20px;
+    text-align: center;
+    padding: 30px 15px
+}
+
+.base_theme.ui-dialog {
+    padding: 0;
+    border: 0;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,.5)
+}
+
+.base_theme.ui-corner-all {
+    border-radius: 0
+}
+
+.base_theme .ui-widget-header {
+    border: 0;
+    background: #231f20;
+    color: #f0f0f0;
+    border-radius: 0;
+    text-align: center
+}
+
+.base_theme.ui-dialog .ui-dialog-titlebar-close {
+    padding: 0;
+    border-radius: 0
+}
+
+.base_theme .ui-datepicker-title {
+    color: #303030
+}
+
+.base_theme .ui-widget-content {
+    border-radius: 0
+}
+
+.base_theme .popup_body {
+    padding: 15px;
+    display: none
+}
+
+.popup_editions .popup_body ul {
+    padding: 0;
+    margin: 0;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    list-style: none
+}
+
+    .popup_editions .popup_body ul > li {
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        width: 100%
+    }
+
+        .popup_editions .popup_body ul > li > span {
+            padding: 5px 15px;
+            font-size: 14px;
+            color: #000;
+            display: block;
+            cursor: pointer;
+            border-bottom: 1px solid #e7e7e7
+        }
+
+            .popup_editions .popup_body ul > li > span:hover, .popup_editions .popup_body ul > li > span:focus {
+                color: #0f65ef
+            }
+
+            .popup_editions .popup_body ul > li > span.edition-selected {
+                color: #0f65ef;
+                background: url(../img/ok.png);
+                background-position: right center;
+                background-repeat: no-repeat;
+                background-size: 20px 20px;
+                text-align: left
+            }
+
+.base_theme.share_dialog .popup_body {
+    padding: 30px 15px;
+    text-align: center
+}
+
+.base_theme.share_dialog #share-buttons a {
+    margin-right: 15px;
+    display: inline-block
+}
+
+    .base_theme.share_dialog #share-buttons a:last-child {
+        margin-right: 0
+    }
+
+.base_theme.share_dialog #share-buttons .sb {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    padding: 4px 6px;
+    outline: none;
+    cursor: pointer
+}
+
+    .base_theme.share_dialog #share-buttons .sb.facebook {
+        background-color: #46629e
+    }
+
+    .base_theme.share_dialog #share-buttons .sb.twitter {
+        background-color: #55acee
+    }
+
+    .base_theme.share_dialog #share-buttons .sb.watsapp {
+        background-color: #3cbc74
+    }
+
+    .base_theme.share_dialog #share-buttons .sb .si {
+        font-size: 42px !important;
+        color: #fff
+    }
+
+    .base_theme.share_dialog #share-buttons .sb.copy-link {
+        background: gray
+    }
+
+.mobile_share_page .content .font_icon {
+    text-align: center;
+    margin-bottom: 15px
+}
+
+    .mobile_share_page .content .font_icon > a {
+        margin-right: 15px
+    }
+
+.popup_text_resize .font-minus, .popup_text_resize .font-plus {
+    padding: 8px 10px;
+    background-color: #333;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    margin-bottom: 10px;
+    cursor: pointer
+}
+
+.popup_text_resize .font-minus {
+    margin-right: 15px
+}
+
+    .popup_text_resize .font-minus .si, .popup_text_resize .font-plus .si {
+        color: #fff
+    }
+
+.modal.modal-server-message {
+    text-align: center
+}
+
+    .modal.modal-server-message:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%
+    }
+
+    .modal.modal-server-message .modal-dialog {
+        max-width: 290px;
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle
+    }
+
+    .modal.modal-server-message .modal-body {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center
+    }
+
+        .modal.modal-server-message .modal-body .message {
+            border-radius: 6px 6px 0 0;
+            padding: 15px
+        }
+
+            .modal.modal-server-message .modal-body .message h3 {
+                font-size: 22px;
+                font-weight: 700;
+                margin-top: 10px
+            }
+
+            .modal.modal-server-message .modal-body .message p {
+                font-size: 16px;
+                color: #707070
+            }
+
+        .modal.modal-server-message .modal-body .action {
+            border-radius: 0 0 6px 6px
+        }
+
+.btn-action {
+    border-radius: 0 0 6px 6px;
+    background-color: #f5931d;
+    border-color: #f5931d;
+    color: #fff
+}
+
+    .btn-action:hover, .btn-action:focus {
+        color: #fff;
+        background-color: #dc7d09;
+        border-color: #dc7d09
+    }
+
+.server-message-close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #000;
+    width: 20px;
+    height: 20px
+}
+
+    .server-message-close .si {
+        color: #fff;
+        font-size: 14px
+    }
+
+@media only screen and (max-width:1023px) {
+    .popup_editions .popup_body ul {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1
+    }
+}
+
+.modal_editions_hierarchy .modal-dialog {
+    width: 300px
+}
+
+.modal_editions_hierarchy .modal-content {
+    border-radius: 0
+}
+
+.modal_editions_hierarchy .modal-header {
+    background-color: #026;
+    padding: 10px 15px;
+    border-bottom: 1px solid #026;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.modal_editions_hierarchy .modal-title {
+    color: #fff
+}
+
+.modal_editions_hierarchy .close, .modal_editionsLevel3 .close {
+    opacity: 1;
+    position: absolute;
+    right: 15px;
+    top: 15px
+}
+
+    .modal_editions_hierarchy .close > img, .modal_editionsLevel3 .close > img {
+        width: 20px;
+        height: 20px
+    }
+
+.modal_editions_hierarchy .modal-body {
+    padding: 0
+}
+
+.modal_editions_hierarchy .panel-group {
+    margin-bottom: 0
+}
+
+    .modal_editions_hierarchy .panel-group .panel {
+        margin-bottom: 0;
+        border-radius: 0;
+        border-bottom: 1px solid #fff;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0
+    }
+
+        .modal_editions_hierarchy .panel-group .panel:first-child {
+            border-top: 1px solid #fff
+        }
+
+        .modal_editions_hierarchy .panel-group .panel + .panel {
+            margin-top: 0
+        }
+
+.modal_editions_hierarchy .panel {
+    border-radius: 0
+}
+
+.modal_editions_hierarchy .panel-default > .panel-heading {
+    color: #fff;
+    background-color: #026;
+    border-color: #026;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
+}
+
+.modal_editions_hierarchy .panel-body {
+    padding: 0
+}
+
+.modal_editions_hierarchy .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
+}
+
+.modal_editions_hierarchy .list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.modal_editions_hierarchy .list-group-item {
+    border-right: 0;
+    border-left: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 0;
+    padding: 0
+}
+
+.modal_editions_hierarchy .panel-group .panel-heading + .panel-collapse > .list-group, .modal_editions_hierarchy .panel-group .panel-heading + .panel-collapse > .panel-body {
+    border-top: 0
+}
+
+.modal_editions_hierarchy .list-group-item span {
+    display: block;
+    cursor: pointer;
+    padding: 10px 15px
+}
+
+    .modal_editions_hierarchy .list-group-item span.active {
+        color: red
+    }
+
+    .modal_editions_hierarchy .list-group-item span.second_level {
+        font-weight: 700
+    }
+
+    .modal_editions_hierarchy .list-group-item span .ellips {
+        display: block;
+        float: right;
+        padding: 0;
+        line-height: 1;
+        letter-spacing: 1.5px
+    }
+
+.editionsLevel3_backbutton {
+    display: block;
+    position: absolute;
+    left: 15px
+}
+
+.modal_editions_hierarchy .panel-heading {
+    padding: 0
+}
+
+    .modal_editions_hierarchy .panel-heading .panel-title > a {
+        padding: 10px 15px;
+        display: block;
+        width: 100%
+    }
+
+        .modal_editions_hierarchy .panel-heading .panel-title > a:hover, .modal_editions_hierarchy .panel-heading .panel-title > a:focus {
+            text-decoration: none
+        }
+
+.modal_editions_hierarchy .list-group {
+    margin-bottom: 0
+}
+
+@media only screen and (max-width:767px) {
+    .modal_editions_hierarchy .modal-dialog {
+        margin-left: auto;
+        margin-right: auto
+    }
+}

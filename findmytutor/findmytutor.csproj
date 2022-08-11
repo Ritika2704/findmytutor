@@ -141,6 +141,16 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\tutor.png" />
+    <Content Include="Content\LoginPage%281%29.css" />
+    <Content Include="Content\LoginPage%282%29.css" />
+    <Content Include="Content\LoginPage%283%29.css" />
+    <Content Include="Content\LoginPage%284%29.css" />
+    <Content Include="Content\LoginPage%285%29.css" />
+    <Content Include="Content\LoginPage%286%29.css" />
+    <Content Include="Content\RegisterPage%281%29.css" />
+    <Content Include="Content\RegisterPage%282%29.css" />
+    <Content Include="Content\RegisterPage%283%29.css" />
+    <Content Include="Content\RegisterPage%284%29.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
