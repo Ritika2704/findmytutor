@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using findmytutor.Models;
+using findmytutor.Models.Entities;
 
 namespace findmytutor.Controllers
 {
@@ -49,6 +50,28 @@ namespace findmytutor.Controllers
         public ActionResult RegisterPage()
         {
             RegisterModel register = new RegisterModel();
+            //Now we will first get the data for State
+            List<SelectListItem> contentData = new List<SelectListItem>();
+            contentData.Add(new SelectListItem
+            {
+                Text = "State 1",
+                Value = "1",
+            });
+
+            contentData.Add(new SelectListItem
+            {
+                Text = "State 2",
+                Value = "2",
+            });
+
+            //List<States> myStates = db.States.ToList();
+
+            //Convert above list to SelectList
+            //Send the list to Register View
+            //Give default option of --Select State-- with value of 0
+            //Now using AJAX or Jquery get the city based on the state
+
+            ViewBag.States = contentData;
             return View(register);
         }
 
@@ -56,9 +79,15 @@ namespace findmytutor.Controllers
         {
             return Json(db.States.ToList(), JsonRequestBehavior.AllowGet);
         }
-        public ActionResult GetCities()
+        public ActionResult GetCities(string state_id)
         {
-            return Json(db.cities.ToList(), JsonRequestBehavior.AllowGet);
+            int convertedstate_id = 0;
+            if (!string.IsNullOrEmpty(state_id))
+            {
+                convertedstate_id = Convert.ToInt32(state_id);
+            }
+
+            return Json(db.cities.Where(x=>x.state_id == convertedstate_id).ToList(), JsonRequestBehavior.AllowGet);
         }
     }
 }

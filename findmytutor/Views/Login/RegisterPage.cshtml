@@ -36,53 +36,53 @@
                 @using (Html.BeginForm("AddUser", "Register", FormMethod.Post, new { @id = "Registerform", @class = "mb-lg", role = "form", enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
-            <div class="form-input">
-                @*<input type="text" name="Name" id="Name" class="form-control" placeholder="Name" required>*@
-                @Html.TextBoxFor(m => m.Name, new { @id = "Name", @class = "form-control", @required = "required", @placeholder = "Name", @autocomplete = "off" })
-            </div>
+                    <div class="form-input">
+                        @*<input type="text" name="Name" id="Name" class="form-control" placeholder="Name" required>*@
+                        @Html.TextBoxFor(m => m.Name, new { @id = "Name", @class = "form-control", @required = "required", @placeholder = "Name", @autocomplete = "off" })
+                    </div>
 
-                 <div class="form-input">
-                @Html.TextBoxFor(m => m.EmailAddress, new { @id = "yourEmail", @class = "form-control", @required = "required", @placeholder = "Enter Email", @autocomplete = "off" })
-            </div>
-                 <div class="form-input number_in">
-                     @*<input id="txtMobileNo" type="text" name="MobileNumber" class="form-control" placeholder="Phone Number" required>*@
-                     @Html.TextBoxFor(m => m.MobileNumber, new { @id = "txtMobileNo", @class = "form-control", @required = "required", @placeholder = "Phone Number", @autocomplete = "off" })
-                     <span>+91</span>
-                 </div>
-                 <div class="form-input">
-                     @*<input type = "password" name="Password" id="regpass" class="form-control" placeholder="Password" required>*@
-                     @Html.TextBoxFor(m => m.Password, new { @id = "regpass", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
-                 </div>
-            @*<div class="form-input">
-                <input id="txtconfrmPassword" type="password" name="confrmPassword" class="form-control" placeholder="Confirm Password">
-                @Html.TextBoxFor(m => m.Password, new { @id = "txtPassword", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
-            </div>*@
-            <div class="form-input">
-                @*<input type="text" name="Address" id="txtaddress" class="form-control" placeholder="Address" required />*@
-                @Html.TextBoxFor(m => m.Address, new { @id = "txtaddress", @class = "form-control", @required = "required", @placeholder = "Address", @autocomplete = "off", @type = "password" })
-            </div>
-            <div class="form-input">
-                <input type = "text" name="State" id="txtstate" class="form-control" placeholder="State" required />
-                @*@Html.DropDownListFor(m=>m.State, new SelectList(),"State", new { @class = "form-co@*ntrol" })*@
-            </div>
-            <div class="form-input">
-                <input type = "text" name="City" id="txtcity" class="form-control" placeholder="City" required />
-            </div>
+                    <div class="form-input">
+                        @Html.TextBoxFor(m => m.EmailAddress, new { @id = "yourEmail", @class = "form-control", @required = "required", @placeholder = "Enter Email", @autocomplete = "off" })
+                    </div>
+                    <div class="form-input number_in">
+                        @*<input id="txtMobileNo" type="text" name="MobileNumber" class="form-control" placeholder="Phone Number" required>*@
+                        @Html.TextBoxFor(m => m.MobileNumber, new { @id = "txtMobileNo", @class = "form-control", @required = "required", @placeholder = "Phone Number", @autocomplete = "off" })
+                        <span>+91</span>
+                    </div>
+                    <div class="form-input">
+                        @*<input type = "password" name="Password" id="regpass" class="form-control" placeholder="Password" required>*@
+                        @Html.TextBoxFor(m => m.Password, new { @id = "regpass", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
+                    </div>
+                    @*<div class="form-input">
+                        <input id="txtconfrmPassword" type="password" name="confrmPassword" class="form-control" placeholder="Confirm Password">
+                        @Html.TextBoxFor(m => m.Password, new { @id = "txtPassword", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
+                    </div>*@
+                    <div class="form-input">
+                        @*<input type="text" name="Address" id="txtaddress" class="form-control" placeholder="Address" required />*@
+                        @Html.TextBoxFor(m => m.Address, new { @id = "txtaddress", @class = "form-control", @required = "required", @placeholder = "Address", @autocomplete = "off", @type = "password" })
+                    </div>
+                    <div class="form-input">
+                        @*<input type = "text" name="State" id="txtstate" class="form-control" placeholder="State" required />*@
+                        @Html.DropDownListFor(m=>m.State, (List<SelectListItem>)ViewBag.States, "State", new { @class = "form-control" })
+                    </div>
+                    <div class="form-input">
+                        @*<input type = "text" name="City" id="txtcity" class="form-control" placeholder="City" required />*@
+                        <select class="form-control" id="cities" name="cities"></select>
+                    </div>
 
-            <button type = "submit" class="lrbtn">Sign Up</button>
-            @*<p class="or">
-    Or
-    </p>*@
-            @*<ul class="social-media">
-        <li><img class="google" src="#" /></li>
-        <li><img src="#" /></li>
-    </ul>*@
-            @*<p class="">Already Have An Account ?.<a href="/Login/LoginPage">Sign In</a></p>*@
-<p class="">Already Have An Account ?.@Html.ActionLink("Sign In", "LoginPage", "Login", new { area = "" }, new { @class = "" })</p>
-}
-</div>
-</div>
-            @*</div>*@
+                    <button type = "submit" class="lrbtn">Sign Up</button>
+                    @*<p class="or">
+                    Or
+                    </p>*@
+                        @*<ul class="social-media">
+                        <li><img class="google" src="#" /></li>
+                        <li><img src="#" /></li>
+                        </ul>*@
+                    @*<p class="">Already Have An Account ?.<a href="/Login/LoginPage">Sign In</a></p>*@
+                    <p class="">Already Have An Account ?.@Html.ActionLink("Sign In", "LoginPage", "Login", new { area = "" }, new { @class = "" })</p>
+                }
+            </div>
+        </div>
 </section>
 </body>
 </html>
@@ -93,6 +93,10 @@
         $(document).ready(function () {
             $("#loginpagelinkid").addClass("myactive");
             $("#homelinkid").removeClass("myactive");
+
+            $("#cities").hide();
         });
+
+
     </script>
 }
