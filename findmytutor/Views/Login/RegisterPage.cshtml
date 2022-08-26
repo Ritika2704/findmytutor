@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-input">
                         @*<input type = "text" name="State" id="txtstate" class="form-control" placeholder="State" required />*@
-                        @Html.DropDownListFor(m=>m.State, (List<SelectListItem>)ViewBag.States, "State", new { @class = "form-control" })
+                        @Html.DropDownListFor(m=>m.State, ViewBag.StatesTb1 as SelectList,"--Select--", new { @class = "form-control" })
                     </div>
                     <div class="form-input">
                         @*<input type = "text" name="City" id="txtcity" class="form-control" placeholder="City" required />*@

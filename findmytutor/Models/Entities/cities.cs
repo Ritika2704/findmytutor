@@ -9,7 +9,7 @@ namespace findmytutor.Models.Entities
         [Key]
         public int city_id { get; set; }
 
-        [ForeignKey("state_id")]
+       // [ForeignKey("state_id")]
         public int state_id { get; set; }
     }
 }

@@ -7,11 +7,13 @@ using System.Web.Mvc;
 using findmytutor.Models;
 using findmytutor.Models.Entities;
 
+
 namespace findmytutor.Controllers
 {
     public class LoginController : Controller
     {
         private FindMyTutorContext db = new FindMyTutorContext();
+      
         public ActionResult LoginPage()
         {
             LoginModel login = new LoginModel();
@@ -49,20 +51,24 @@ namespace findmytutor.Controllers
 
         public ActionResult RegisterPage()
         {
-            RegisterModel register = new RegisterModel();
-            //Now we will first get the data for State
-            List<SelectListItem> contentData = new List<SelectListItem>();
-            contentData.Add(new SelectListItem
-            {
-                Text = "State 1",
-                Value = "1",
-            });
+            List<States> statelist = db.States.ToList();
+            ViewBag.StatesTb1 = new SelectList(statelist, "state_id" , "statename");
 
-            contentData.Add(new SelectListItem
-            {
-                Text = "State 2",
-                Value = "2",
-            });
+           
+            //RegisterModel register = new RegisterModel();
+            //Now we will first get the data for State
+            //List<SelectListItem> contentData = new List<SelectListItem>();
+            //contentData.Add(new SelectListItem
+            //{
+                //Text = "State 1",
+                //Value = "1",
+            //});
+
+            //contentData.Add(new SelectListItem
+            //{
+                //Text = "State 2",
+                //Value = "2",
+            //});
 
             //List<States> myStates = db.States.ToList();
 
@@ -71,8 +77,8 @@ namespace findmytutor.Controllers
             //Give default option of --Select State-- with value of 0
             //Now using AJAX or Jquery get the city based on the state
 
-            ViewBag.States = contentData;
-            return View(register);
+         //   ViewBag.States = contentData;
+            return View();
         }
 
         public ActionResult GetStates()
