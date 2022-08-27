@@ -54,6 +54,8 @@ namespace findmytutor.Controllers
             List<States> statelist = db.States.ToList();
             ViewBag.StatesTb1 = new SelectList(statelist, "state_id" , "statename");
 
+            List<cities> citylist = db.cities.ToList();
+            ViewBag.citiesTb1 = new SelectList(citylist, "city_Id", "city_name", "state_id");
            
             //RegisterModel register = new RegisterModel();
             //Now we will first get the data for State

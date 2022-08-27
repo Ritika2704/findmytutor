@@ -63,11 +63,12 @@
                     </div>
                     <div class="form-input">
                         @*<input type = "text" name="State" id="txtstate" class="form-control" placeholder="State" required />*@
-                        @Html.DropDownListFor(m=>m.State, ViewBag.StatesTb1 as SelectList,"--Select--", new { @class = "form-control" })
+                        @Html.DropDownListFor(m=>m.State, ViewBag.StatesTb1 as SelectList,"--Select State--", new { @class = "form-control" })
                     </div>
                     <div class="form-input">
                         @*<input type = "text" name="City" id="txtcity" class="form-control" placeholder="City" required />*@
-                        <select class="form-control" id="cities" name="cities"></select>
+                        @*@<select class="form-control" id="cities" name="cities"></select>*@
+                        @Html.DropDownListFor(m=>m.City, ViewBag.citiesTb1 as SelectList,"--Select City--", new { @class = "form-control" })
                     </div>
 
                     <button type = "submit" class="lrbtn">Sign Up</button>
