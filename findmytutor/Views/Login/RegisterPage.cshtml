@@ -33,7 +33,7 @@
                 </div>
                 @*<div class="register-form" id="emailId">*@
                 <center>@Html.ValidationSummary(true, null, new { @class = "text-danger", style = "font-size:20px" })</center>
-                @using (Html.BeginForm("AddUser", "Register", FormMethod.Post, new { @id = "Registerform", @class = "mb-lg", role = "form", enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("RegisterUser", "Login", FormMethod.Post, new { @id = "Registerform", @class = "mb-lg", role = "form", enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
                     <div class="form-input">

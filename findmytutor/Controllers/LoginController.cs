@@ -51,10 +51,10 @@ namespace findmytutor.Controllers
 
         public ActionResult RegisterPage()
         {
-            List<States> statelist = db.States.ToList();
+            List<States> statelist = db.States.OrderBy(x=>x.statename).ToList();
             ViewBag.StatesTb1 = new SelectList(statelist, "state_id" , "statename");
 
-            List<cities> citylist = db.cities.ToList();
+            List<cities> citylist = db.cities.OrderBy(x=>x.city_name).ToList();
             ViewBag.citiesTb1 = new SelectList(citylist, "city_Id", "city_name", "state_id");
            
             //RegisterModel register = new RegisterModel();
@@ -83,6 +83,20 @@ namespace findmytutor.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegisterUser(RegisterModel register)
+        {
+            List<States> statelist = db.States.OrderBy(x => x.statename).ToList();
+            ViewBag.StatesTb1 = new SelectList(statelist, "state_id", "statename");
+
+            List<cities> citylist = db.cities.OrderBy(x => x.city_name).ToList();
+            ViewBag.citiesTb1 = new SelectList(citylist, "city_Id", "city_name", "state_id");
+
+            //Insert in DB and get a result
+            return View("RegisterPage", register);
+
+        }
         public ActionResult GetStates()
         {
             return Json(db.States.ToList(), JsonRequestBehavior.AllowGet);
