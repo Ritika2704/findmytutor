@@ -9,5 +9,6 @@
         public string Address { get; set; }
         public int State { get; set; }
         public int City { get; set; }
+        public string OutputMessage { get; set; }
     }
 }

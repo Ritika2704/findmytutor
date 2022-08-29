@@ -31,6 +31,15 @@
                 <div id="divRegistermsg" class="alert alert-success" style="display:none; z-index: 1050; position: relative; padding: 5px 10px; margin: 5px 0;">
                     <strong></strong>
                 </div>
+                @if (Model != null)
+                {
+                    if (!string.IsNullOrEmpty(Model.OutputMessage))
+                    {
+                        <center><h3>@Model.OutputMessage</h3></center>
+                    }
+                }
+
+
                 @*<div class="register-form" id="emailId">*@
                 <center>@Html.ValidationSummary(true, null, new { @class = "text-danger", style = "font-size:20px" })</center>
                 @using (Html.BeginForm("RegisterUser", "Login", FormMethod.Post, new { @id = "Registerform", @class = "mb-lg", role = "form", enctype = "multipart/form-data" }))
@@ -54,31 +63,31 @@
                         @Html.TextBoxFor(m => m.Password, new { @id = "regpass", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
                     </div>
                     @*<div class="form-input">
-                        <input id="txtconfrmPassword" type="password" name="confrmPassword" class="form-control" placeholder="Confirm Password">
-                        @Html.TextBoxFor(m => m.Password, new { @id = "txtPassword", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
-                    </div>*@
+                <input id="txtconfrmPassword" type="password" name="confrmPassword" class="form-control" placeholder="Confirm Password">
+                @Html.TextBoxFor(m => m.Password, new { @id = "txtPassword", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
+            </div>*@
                     <div class="form-input">
                         @*<input type="text" name="Address" id="txtaddress" class="form-control" placeholder="Address" required />*@
                         @Html.TextBoxFor(m => m.Address, new { @id = "txtaddress", @class = "form-control", @required = "required", @placeholder = "Address", @autocomplete = "off" })
                     </div>
                     <div class="form-input">
                         @*<input type = "text" name="State" id="txtstate" class="form-control" placeholder="State" required />*@
-                        @Html.DropDownListFor(m=>m.State, ViewBag.StatesTb1 as SelectList,"--Select State--", new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.State, ViewBag.StatesTb1 as SelectList, "--Select State--", new { @class = "form-control" })
                     </div>
                     <div class="form-input">
                         @*<input type = "text" name="City" id="txtcity" class="form-control" placeholder="City" required />*@
                         @*@<select class="form-control" id="cities" name="cities"></select>*@
-                        @Html.DropDownListFor(m=>m.City, ViewBag.citiesTb1 as SelectList,"--Select City--", new { @class = "form-control" })
+                        @Html.DropDownListFor(m => m.City, ViewBag.citiesTb1 as SelectList, "--Select City--", new { @class = "form-control" })
                     </div>
 
-                    <button type = "submit" class="lrbtn">Sign Up</button>
+                    <button type="submit" class="lrbtn">Sign Up</button>
                     @*<p class="or">
-                    Or
-                    </p>*@
-                        @*<ul class="social-media">
-                        <li><img class="google" src="#" /></li>
-                        <li><img src="#" /></li>
-                        </ul>*@
+            Or
+            </p>*@
+                    @*<ul class="social-media">
+            <li><img class="google" src="#" /></li>
+            <li><img src="#" /></li>
+            </ul>*@
                     @*<p class="">Already Have An Account ?.<a href="/Login/LoginPage">Sign In</a></p>*@
                     <p class="">Already Have An Account ?.@Html.ActionLink("Sign In", "LoginPage", "Login", new { area = "" }, new { @class = "" })</p>
                 }

@@ -101,14 +101,28 @@ namespace findmytutor.Controllers
             tut.City = register.City;
             tut.Address = register.Address;
             tut.Password = register.Password;
+
+            bool insertResult = false;
             //Insert in DB and get a result
             FindMyTutorContext findMyTutorContext = new FindMyTutorContext();
             using (FindMyTutorContext context = findMyTutorContext)
             {
                 context.tutors.Add(tut);
-                context.SaveChanges();
+                int result= context.SaveChanges();
+                if(result > 0)
+                {
+                    insertResult=true;
+                }
             }
-            return View(register);
+            if(insertResult)
+            {
+                register.OutputMessage="Succesfully registered";
+            }
+            else
+            {
+                register.OutputMessage="There was a problem in registering. Please contact admin";
+            }
+            return View("RegisterPage", register);
 
         }
         public ActionResult GetStates()
