@@ -92,9 +92,23 @@ namespace findmytutor.Controllers
 
             List<cities> citylist = db.cities.OrderBy(x => x.city_name).ToList();
             ViewBag.citiesTb1 = new SelectList(citylist, "city_Id", "city_name", "state_id");
-
+            Tutor tut = new Tutor();
+  
+            tut.Name = register.Name;
+            tut.EmailAddress = register.EmailAddress;
+            tut.PhoneNumber = register.MobileNumber;
+            tut.State = register.State;
+            tut.City = register.City;
+            tut.Address = register.Address;
+            tut.Password = register.Password;
             //Insert in DB and get a result
-            return View("RegisterPage", register);
+            FindMyTutorContext findMyTutorContext = new FindMyTutorContext();
+            using (FindMyTutorContext context = findMyTutorContext)
+            {
+                context.tutors.Add(tut);
+                context.SaveChanges();
+            }
+            return View(register);
 
         }
         public ActionResult GetStates()

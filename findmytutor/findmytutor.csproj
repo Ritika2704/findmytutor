@@ -149,11 +149,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Binding_DDL2.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\city.cs">
-      <DependentUpon>Binding_DDL2.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\city.cs" />
     <Compile Include="Models\Entities\cities.cs" />
     <Compile Include="Models\Entities\States.cs" />
+    <Compile Include="Models\Entities\Tutor.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
