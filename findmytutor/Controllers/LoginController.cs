@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using findmytutor.Models;
 using findmytutor.Models.Entities;
+using Scrypt;
 
 
 namespace findmytutor.Controllers
@@ -87,6 +88,7 @@ namespace findmytutor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegisterUser(RegisterModel register)
         {
+            ScryptEncoder encoder = new ScryptEncoder();
             List<States> statelist = db.States.OrderBy(x => x.statename).ToList();
             ViewBag.StatesTb1 = new SelectList(statelist, "state_id", "statename");
 
@@ -100,7 +102,7 @@ namespace findmytutor.Controllers
             tut.State = register.State;
             tut.City = register.City;
             tut.Address = register.Address;
-            tut.Password = register.Password;
+            tut.Password = encoder.Encode(register.Password);
 
             bool insertResult = false;
             //Insert in DB and get a result
