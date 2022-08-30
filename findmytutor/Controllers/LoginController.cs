@@ -9,6 +9,7 @@ using findmytutor.Models.Entities;
 using Scrypt;
 
 
+
 namespace findmytutor.Controllers
 {
     public class LoginController : Controller
@@ -95,49 +96,49 @@ namespace findmytutor.Controllers
 
             List<cities> citylist = db.cities.OrderBy(x => x.city_name).ToList();
             ViewBag.citiesTb1 = new SelectList(citylist, "city_Id", "city_name", "state_id");
+            Tutor tut = new Tutor();
 
             if (ModelState.IsValid)
             {
                 var isEmailAlreadyExists = db.tutors.Any(x => x.EmailAddress == register.EmailAddress);
                 if (isEmailAlreadyExists)
                 {
-                    ModelState.AddModelError("Email", "User with this email already exists");
-                    return View(register);
-                }
-                Tutor tut = new Tutor();
-                tut.Name = register.Name;
-                tut.EmailAddress = register.EmailAddress;
-                tut.PhoneNumber = register.MobileNumber;
-                tut.State = register.State;
-                tut.City = register.City;
-                tut.Address = register.Address;
-                tut.Password = encoder.Encode(register.Password);
-                db.tutors.Add(tut);
-                db.SaveChanges();
-                return RedirectToAction("RegisterPage");
-
-                bool insertResult = false;
-                //Insert in DB and get a result
-                FindMyTutorContext findMyTutorContext = new FindMyTutorContext();
-                using (FindMyTutorContext context = findMyTutorContext)
-                {
-                    context.tutors.Add(tut);
-                    int result = context.SaveChanges();
-                    if (result > 0)
-                    {
-                        insertResult = true;
-                    }
-                }
-                if (insertResult)
-                {
-                    register.OutputMessage = "Succesfully registered";
+                    register.OutputMessage = "Email account already exists. Please register with a new email or login with current email";
                 }
                 else
                 {
-                    register.OutputMessage = "There was a problem in registering. Please contact admin";
-                }
+                    tut.Name = register.Name;
+                    tut.EmailAddress = register.EmailAddress;
+                    tut.PhoneNumber = register.MobileNumber;
+                    tut.State = register.State;
+                    tut.City = register.City;
+                    tut.Address = register.Address;
+                    tut.Password = encoder.Encode(register.Password);
 
+                    bool insertResult = false;
+                    //Insert in DB and get a result
+                    FindMyTutorContext findMyTutorContext = new FindMyTutorContext();
+                    using (FindMyTutorContext context = findMyTutorContext)
+                    {
+                        context.tutors.Add(tut);
+                        int result = context.SaveChanges();
+                        if (result > 0)
+                        {
+                            insertResult = true;
+                        }
+                    }
+
+                    if (insertResult)
+                    {
+                        register.OutputMessage = "Succesfully registered";
+                    }
+                    else
+                    {
+                        register.OutputMessage = "There was a problem in registering. Please contact admin";
+                    }
+                }
             }
+
             return View("RegisterPage", register);
 
         }
