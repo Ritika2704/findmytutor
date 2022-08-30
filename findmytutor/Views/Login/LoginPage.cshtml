@@ -31,6 +31,13 @@
                 <p class="p_continue">Please Sign In To Continue</p>
                 <br />
                 <center>@Html.ValidationSummary(true, null, new { @class = "text-danger", style = "font-size:20px" })</center>
+                @if (Model != null)
+                {
+                    if (!string.IsNullOrEmpty(Model.ResultMessage))
+                    {
+                        <center><h3>@Model.ResultMessage</h3></center>
+                    }
+                }
                 @using (Html.BeginForm("AuthenticateUser", "Login", FormMethod.Post, new { @id = "myform", @class = "mb-lg", role = "form", enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
@@ -41,13 +48,13 @@
                         @Html.TextBoxFor(m => m.Password, new { @id = "txtPassword", @class = "form-control", @required = "required", @placeholder = "Enter Password", @autocomplete = "off", @type = "password" })
                     </div>
                     <div class="rem-forgot">
-                        <div class="form-check" style="margin-right: 100px;margin-top: 10px;">
-                            <input checked="checked" class="form-check-input" type="checkbox">
+                        @*<div class="form-check" style="margin-right: 100px;margin-top: 10px;">
+                    <input checked="checked" class="form-check-input" type="checkbox">
 
-                            <label class="form-check-label" for="chkSignIn">
-                                Keep me signed in
-                            </label>
-                        </div>
+                    <label class="form-check-label" for="chkSignIn">
+                        Keep me signed in
+                    </label>
+                </div>*@
                         <a class="forgot-password" style="cursor:pointer">Forgot Password?</a>
                     </div>
                     <button type="submit" class="lrbtn">Sign In</button>

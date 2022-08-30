@@ -7,8 +7,10 @@ using System.Web.Mvc;
 using findmytutor.Models;
 using findmytutor.Models.Entities;
 using Scrypt;
-
-
+using System.Security.Cryptography;
+using System.Text;
+using findmytutor.Helpers;
+using System.Web.Security;
 
 namespace findmytutor.Controllers
 {
@@ -34,13 +36,36 @@ namespace findmytutor.Controllers
                     string currentEmail = login.Email;
                     string currentPassword = login.Password;
 
+                    var check = db.tutors.Where(x => x.EmailAddress == login.Email).FirstOrDefault();
+                    if (check != null)
+                    {
+                        var checkPass = check.Password;
+                        var hashedPass = Security.GenerateHashPassword(login.Password);
+
+                        if(checkPass == hashedPass)
+                        {
+                            //Success
+                            //FormsAuthentication.
+                            return RedirectToAction("Index", "Dashboard");
+                        }
+                        else
+                        {
+                            login.ResultMessage="Username/Password is incorrect! Please try again";
+                        }
+
+                    }
+                    else
+                    {
+                        login.ResultMessage="Username/Password is incorrect! Please try again";
+                    }
+
                     //bool result = AuthenticateUser(currentEmail, currentPassword);
                     //bool result = false;
                     //if true, then redirect to next page
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid Model State");
+                    login.ResultMessage="Invalid Model State";
                 }
             }
             catch(Exception ex)
@@ -113,7 +138,8 @@ namespace findmytutor.Controllers
                     tut.State = register.State;
                     tut.City = register.City;
                     tut.Address = register.Address;
-                    tut.Password = encoder.Encode(register.Password);
+                    tut.Password = Security.GenerateHashPassword(register.Password);
+
 
                     bool insertResult = false;
                     //Insert in DB and get a result
