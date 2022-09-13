@@ -131,7 +131,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="Controllers\FindMyTutorEntities.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DataAccess\FindMyTutorContext.cs" />
@@ -139,26 +138,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Security.cs" />
-    <Compile Include="Models\Binding_DDL2.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Binding_DDL2.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Binding_DDL2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Binding_DDL2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Binding_DDL2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Binding_DDL2.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Entities\cities.cs" />
     <Compile Include="Models\Entities\States.cs" />
     <Compile Include="Models\Entities\Tutor.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\TutorSearchModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -181,25 +166,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Binding_DDL2.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Binding_DDL2.edmx</DependentUpon>
-      <LastGenOutput>Binding_DDL2.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Binding_DDL2.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Binding_DDL2.edmx</DependentUpon>
-      <LastGenOutput>Binding_DDL2.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\Binding_DDL2.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Binding_DDL2.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Binding_DDL2.edmx.diagram">
-      <DependentUpon>Binding_DDL2.edmx</DependentUpon>
-    </Content>
     <Content Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </Content>

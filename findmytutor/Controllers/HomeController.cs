@@ -11,12 +11,33 @@ namespace findmytutor.Controllers
     public class HomeController : Controller
     {
         private FindMyTutorContext db = new FindMyTutorContext();
-        public ActionResult Index( string searching)
+        public ActionResult Index(string searching)
         {
-            return View(db.tutors.Where(x => x.Name.Contains(searching)|| searching == null).ToList());
-        }
+            List<TutorSearchModel> tutorSearch = new List<TutorSearchModel>();
 
-      
+            try
+            {
+                if (!string.IsNullOrEmpty(searching))
+                {
+                    tutorSearch = db.tutors.Where(x => x.Name.Contains(searching)).Select(x => new TutorSearchModel
+                    {
+                        Name = x.Name,
+                        State = "Haryana",
+                        City = "Sonepat",
+                        EmailAddress = x.EmailAddress,
+                        PhoneNumber = x.PhoneNumber,
+                        Address = x.Address
+                    }
+                    ).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Logging here
+            }
+
+            return View(tutorSearch);
+        }
 
         public ActionResult About()
         {

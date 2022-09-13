@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using findmytutor.Models;
 using findmytutor.Models.Entities;
-using Scrypt;
+//using Scrypt;
 using System.Security.Cryptography;
 using System.Text;
 using findmytutor.Helpers;
@@ -114,7 +114,7 @@ namespace findmytutor.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegisterUser(RegisterModel register)
         {
-            ScryptEncoder encoder = new ScryptEncoder();
+            //ScryptEncoder encoder = new ScryptEncoder();
 
             List<States> statelist = db.States.OrderBy(x => x.statename).ToList();
             ViewBag.StatesTb1 = new SelectList(statelist, "state_id", "statename");
