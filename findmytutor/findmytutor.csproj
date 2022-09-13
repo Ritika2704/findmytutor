@@ -131,6 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\FindMyTutorEntities.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DataAccess\FindMyTutorContext.cs" />
@@ -153,7 +154,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Binding_DDL2.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\city.cs" />
     <Compile Include="Models\Entities\cities.cs" />
     <Compile Include="Models\Entities\States.cs" />
     <Compile Include="Models\Entities\Tutor.cs" />
@@ -199,6 +199,9 @@
     </EntityDeploy>
     <Content Include="Models\Binding_DDL2.edmx.diagram">
       <DependentUpon>Binding_DDL2.edmx</DependentUpon>
+    </Content>
+    <Content Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

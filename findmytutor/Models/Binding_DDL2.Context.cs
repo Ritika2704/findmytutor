@@ -15,6 +15,8 @@ namespace findmytutor.Models
     
     public partial class findmytutorEntities : DbContext
     {
+        internal object tutors;
+
         public findmytutorEntities()
             : base("name=findmytutorEntities")
         {
