@@ -19,11 +19,11 @@ namespace findmytutor.Controllers
             {
                 if (!string.IsNullOrEmpty(searching))
                 {
-                    tutorSearch = db.tutors.Where(x => x.Name.Contains(searching)).Select(x => new TutorSearchModel
+                    tutorSearch = db.tutors.Where(x => x.Name.Contains(searching) || x.Address.Contains(searching) || x.PhoneNumber.Contains(searching)).Select(x => new TutorSearchModel
                     {
                         Name = x.Name,
-                        State = "Haryana",
-                        City = "Sonepat",
+                        State = db.States.Where(y=>y.state_id==x.State).Select(y=>y.statename).FirstOrDefault(),
+                        City = db.cities.Where(y=>y.city_id == x.City).Select(y => y.city_name).FirstOrDefault(),
                         EmailAddress = x.EmailAddress,
                         PhoneNumber = x.PhoneNumber,
                         Address = x.Address
