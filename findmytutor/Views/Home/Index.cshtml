@@ -7,84 +7,405 @@
     //Layout = null;
 }
 
+<html lang="en">
+<head>
+    <style>
 
-<div class="jumbotron">
-    <h1 style="text-align:center"> Welcome to Find My Tutor</h1>
-    <p class="lead" style="text-align:center"><b>Find my tutor</b> is a free platform for tutors and students to connect easily.</p>
-
-
-</div>
-
-<center>
-    @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { id = "tutorsearchform" }))
-    {
-        @Html.TextBox("searching", "", new { @class = "form-control", @placeholder = "Search Tutor" })
-        <br />
-        <input type="button" id="mySubmitBtn" value=" Find a tutor" class="btn btn-sm btn-success" />
-    }
-</center>
-<br />
-<br />
-
-<table class="table table-striped" id="myTutorSearchResulTable">
-    <thread>
-        <tr>
-            <th>Tutor Name</th>
-            <th>Tutor State</th>
-            <th>Tutor City</th>
-            <th>Tutor PhoneNumber</th>
-            <th>Tutor Email Address</th>
-            <th>Tutor Address</th>
-        </tr>
-    </thread>
-    @if (Model.Count() ==0)
-    {
-        <tr>
-            <td colspan="3" style="color:red">
-                No tutors found
-            </td>
-        </tr>
-    }
-    else
-    {
-        foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.State</td>
-                <td>@item.City</td>
-                <td>@item.PhoneNumber</td>
-                <td>@item.EmailAddress</td>
-                <td>@item.Address</td>
-            </tr>
+        .inputGroup .lff {
+            padding: 10px 20px;
+            width: 100%;
+            display: block;
+            font-weight: 400;
+            text-align: left;
+            color: #3c454c;
+            border: 1px solid gainsboro;
+            border-radius: 7px;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+            z-index: 2;
+            transition: color 200ms ease-in;
+            overflow: hidden;
         }
-    }
 
-</table>
+            .inputGroup .lff:after {
+                width: 20px;
+                height: 20px;
+                content: '';
+                border: 2px solid #d1d7dc;
+                background-color: #fff;
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='4 4 27 27' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+                background-repeat: no-repeat;
+                background-position: 2px 3px;
+                border-radius: 50%;
+                z-index: 2;
+                position: absolute;
+                right: 30px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                transition: all 200ms ease-in;
+            }
 
-<hr />
 
-<h2 style="text-align:center">Why Us?</h2>
-<p style="text-align:center">
-    There are plenty of institutes and tuition centres to choose from,
-    especially when it comes to online tuition classes as we're living in the Internet era.
-    You can check through the reviews and ratings of different tuition centres and tutors available with <b>Find my tutor</b> to find the best one for yourself.
-</p>
-@*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+        .inputGroup .zff:checked ~ label:before {
+            transform: translate(-50%, -50%) scale3d(56, 56, 1);
+            opacity: 1;
+        }
 
-<div class="row">
-    <div class="col-md-4" style=" width: 50%; margin: 60px auto 60px auto; text-align: left; line-height: 1.5;">
-        <h2>Why we are helpful for tutors? </h2>
-        <p>We provide you with a complete business package and easy connection so you can focus on helping students.</p>
-        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+        .inputGroup .zff:checked ~ label:after {
+            background-color: #07c6ff;
+            border-color: #ffffff;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #3762f0;
+            border-color: #2e6da4;
+        }
+
+        .inputGroup .zff {
+            width: 32px;
+            height: 32px;
+            order: 1;
+            z-index: 2;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            visibility: hidden;
+        }
+
+        .box {
+            padding: 60px 0px;
+        }
+
+        .box-part {
+            background: #FFF;
+            border-radius: 0;
+            padding: 10px 10px;
+            margin: 30px 0px;
+        }
+
+        .text {
+            margin: 20px 0px;
+        }
+
+        .step-boxes {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        .process-box {
+            display: table-cell;
+            text-align: center;
+            position: relative;
+        }
+
+            .process-box .stp_title {
+                text-align: center;
+                font-weight: 600;
+                font-size: 16px;
+            }
+
+            .process-box .content {
+                color: #a3a3a3;
+                padding: 0 10px;
+            }
+
+            .process-box .number {
+                display: block;
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: -40px;
+                left: 50%;
+                margin-left: -40px;
+            }
+
+                .process-box .number:before {
+                    content: '';
+                    background: #5b81ff;
+                    border-radius: 50%;
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -10px;
+                    left: 50%;
+                    margin-left: -10px;
+                    transition: all 0.2s ease-out;
+                }
+
+            .process-box:hover .number:before {
+                width: 80px;
+                height: 80px;
+                margin-left: -40px;
+                margin-top: -40px;
+            }
+
+            .process-box .number span {
+                visibility: hidden;
+                opacity: 0;
+                line-height: 80px;
+                position: relative;
+                color: #fff;
+                font-weight: 700;
+                font-size: 20px;
+                text-align: center;
+                transition: opacity 0.2s ease-out 0.1s, font-size 0.2s ease-out 0.1s, visibility 0.2s ease-out 0.1s;
+                height: 80px;
+                width: 80px;
+                display: block;
+            }
+
+            .process-box:hover .number span {
+                visibility: visible;
+                opacity: 1;
+                font-size: 30px;
+            }
+
+        .line {
+            display: block;
+            height: 1px;
+            width: 100%;
+            margin-left: -10px;
+            background: #d8d8d8;
+            margin: 50px 0;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 style="text-align:center"> Welcome to Find My Tutor</h1>
+        <p class="lead" style="text-align:center"><b>Find my tutor</b> is a free platform for tutors and students to connect easily.</p>
+
 
     </div>
-    <div class="col-md-4" style=" width: 50%; margin: 60px auto 60px auto; text-align: left; line-height: 1.5;">
-        <h2>Finding your child's perfect tutor</h2>
-        <p>Looking through tutor profiles from the search results, you can talk in real time to as many tutors as you want to discuss your child's needs.</p>
-        @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+
+    @*@<center>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { id = "tutorsearchform" }))
+            {
+                @Html.TextBox("searching", "", new { @class = "form-control", @placeholder = "Search Tutor" })
+                <br />
+                <input type="button" id="mySubmitBtn" value=" Find a tutor" class="btn btn-sm btn-success" />
+            }
+        </center>
+        <br />
+        <br />
+
+        <table class="table table-striped" id="myTutorSearchResulTable">
+            <thread>
+                <tr>
+                    <th>Tutor Name</th>
+                    <th>Tutor State</th>
+                    <th>Tutor City</th>
+                    <th>Tutor PhoneNumber</th>
+                    <th>Tutor Email Address</th>
+                    <th>Tutor Address</th>
+                </tr>
+            </thread>
+            @if (Model.Count() ==0)
+            {
+                <tr>
+                    <td colspan="3" style="color:red">
+                        No tutors found
+                    </td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.State</td>
+                        <td>@item.City</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.EmailAddress</td>
+                        <td>@item.Address</td>
+                    </tr>
+                }
+            }
+
+        </table>*@
+
+    <input type="hidden" id="keyword" value="home tuition agency">
+
+    <section class="hero-area bg-img bg-overlay-2by5"
+             style="background-image: url(https://img.freepik.com/free-photo/book-library-with-open-textbook_1150-5920.jpg?w=2000); background-size: cover; ">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12" style="position: relative; top: -67px;">
+                    <!-- Hero Content -->
+                    <div class="hero-content fg text-center"
+                         style="padding: 126px 125px;">
+                        <h3 style="color: white; font-weight: 700; margin-bottom: 24px;">
+                            Discover
+                            Tutors, Institutes and Courses near you
+                        </h3>
+                        <div class="container-contact100 aw-aw" style="margin: 0px 70px;">
+                            <div class="col-md-12"
+                                 style="background: white; padding: 20px 10px; border-radius: 14px;">
+                                <h5 style="font-weight: 600; padding: 25px 0;">
+                                    Which Class
+                                    / Course you are Looking For ?
+                                </h5>
+                                <div class="col-md-6">
+                                    <div class="inputGroup">
+                                        <input class="zff" id="radio1" name="radio" type="radio" /> <label class="lff" for="radio1" onclick="class_selection(this.id)"
+                                                                                                           id="nursery">Nursery</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="inputGroup">
+                                        <input class="zff" id="radio2" name="radio" type="radio" /> <label class="lff" for="radio2" onclick="class_selection(this.id)"
+                                                                                                           id="class1_5">Class I-V Tuition</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="inputGroup">
+                                        <input class="zff" id="radio3" name="radio" type="radio" /> <label class="lff" for="radio3" onclick="class_selection(this.id)"
+                                                                                                           id="class6_8">Class VI-VII </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="inputGroup">
+                                        <input class="zff" id="radio4" name="radio" type="radio" /> <label class="lff" for="radio4" onclick="class_selection(this.id)"
+                                                                                                           id="class9_10">Class IX-X</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="inputGroup">
+                                        <input class="zff" id="radio5" name="radio" type="radio" /> <label class="lff" for="radio5" onclick="class_selection(this.id)"
+                                                                                                           id="class11_12">Class XI-XII</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="inputGroup">
+                                        <input class="zff" id="radio6" name="radio" type="radio" /> <label class="lff" for="radio6" onclick="class_selection(this.id)"
+                                                                                                           id="language">Others</label>
+                                    </div>
+                                </div>
+                                <div class="container-contact100-form-btn ">
+                                    <a data-target="#get-tutor" data-toggle="modal"
+                                       href="#get-tutor" data-backdrop="static" data-keyboard="false"
+                                       onclick="myfun()">
+                                        <button type="button" href="#modalfull"
+                                                data-target="#modalfull" data-toggle="modal"
+                                                class="btn btn-primary" data-backdrop="static"
+                                                data-keyboard="false">
+                                            <span>
+                                                Submit <i class="fa fa-arrow-right "></i>
+                                            </span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid " style="padding-top: 20px;">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center" style="margin-top: 25px;">
+                        <h2 style="padding: 30px 5px; font-weight: 600; text-align: center;">
+                            <span>Get a Perfect Home Tutor within 30 Minutes</span>
+                        </h2>
+                    </div>
+                    <div class="col-md-12 col-sm-12" style="padding: 50px 0;">
+                        <div class="clearfix text-center">
+                            <div class="step-boxes">
+                                <!-- 1 -->
+                                <div class="process-box">
+                                    <div style="margin-bottom: 45px;">
+                                        <img src="~/Content/images/student_post.png" width="80px"
+                                             style="padding: 5px; border: 1px solid blue; border-radius: 13px">
+                                    </div>
+                                    <h4 class="title">Post Free Requirement</h4>
+                                    <div class="line">
+                                        <div class="number">
+                                            <span class="">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ #1 -->
+                                <!-- 1 -->
+                                <div class="process-box">
+                                    <div style="margin-bottom: 45px;">
+                                        <img src="~/Content/images/recieve_notifi.png" width="80px"
+                                             style="padding: 5px; border: 1px solid blue; border-radius: 13px">
+                                    </div>
+                                    <h4 class="title">Instant Responses</h4>
+                                    <div class="line">
+                                        <div class="number">
+                                            <span class="">2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ #1 -->
+                                <!-- 1 -->
+                                <div class="process-box">
+                                    <div style="margin-bottom: 45px;">
+                                        <img src="https://www.gharpeshiksha.com/newImg/compare.svg" width="80px"
+                                             style="padding: 5px; border: 1px solid blue; border-radius: 13px">
+                                    </div>
+                                    <h4 class="title">Compare,Hire and Learn</h4>
+                                    <div class="line">
+                                        <div class="number">
+                                            <span class="">3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--/ #1 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</div>
+
+
+
+
+    <hr />
+
+    <h2 style="text-align:center">Why Us?</h2>
+    <p style="text-align:center">
+        There are plenty of institutes and tuition centres to choose from,
+        especially when it comes to online tuition classes as we're living in the Internet era.
+        You can check through the reviews and ratings of different tuition centres and tutors available with <b>Find my tutor</b> to find the best one for yourself.
+    </p>
+    @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+
+    <div class="row">
+        <div class="col-md-4" style=" width: 50%; margin: 60px auto 60px auto; text-align: left; line-height: 1.5;">
+            <h2>Why we are helpful for tutors? </h2>
+            <p>We provide you with a complete business package and easy connection so you can focus on helping students.</p>
+            @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+
+        </div>
+        <div class="col-md-4" style=" width: 50%; margin: 60px auto 60px auto; text-align: left; line-height: 1.5;">
+            <h2>Finding your child's perfect tutor</h2>
+            <p>Looking through tutor profiles from the search results, you can talk in real time to as many tutors as you want to discuss your child's needs.</p>
+            @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
+        </div>
+    </div>
+
+</body>
+</html>
+
 
 @section Scripts
 {
@@ -98,7 +419,7 @@
                     return false;
                 }
                 else {
-                  
+
                     $("#tutorsearchform").submit();
                 }
             });
