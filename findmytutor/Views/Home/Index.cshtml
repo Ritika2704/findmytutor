@@ -10,7 +10,14 @@
 <html lang="en">
 <head>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
         .inputGroup .lff {
             padding: 10px 20px;
             width: 100%;
@@ -177,6 +184,48 @@
             margin: 50px 0;
             position: relative;
         }
+        .jumbotron {
+           
+            background-image: url('../../content/images/7xm.xyz569099.jpg');
+            background-repeat: no-repeat;
+            background-size: 1200px 600px;
+            position: relative;
+            padding-top: 160px;
+        }
+
+        .section {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            max-width: 80%;
+            margin: auto;
+        }
+        .section-left {
+            flex-direction: row-reverse;
+        }
+        .col-md-4 {
+            padding: 0px 65px;
+        }
+        .thumbnail img {
+            width: 250px;
+            height: 300px;
+            border: 2px solid black;
+            border-radius: 25px;
+            margin-top: 17px;
+        }
+        .sectionTag {
+            padding: 16px 0;
+        }
+
+        .text-big {
+            font-size: 39px;
+        }
+
+        .text-small {
+            font-size: 18.5px;
+        }
+        
     </style>
 
 </head>
@@ -184,11 +233,9 @@
     <div class="jumbotron">
         <h1 style="text-align:center"> Welcome to Find My Tutor</h1>
         <p class="lead" style="text-align:center"><b>Find my tutor</b> is a free platform for tutors and students to connect easily.</p>
-
-
-    </div>
-
-    @*@<center>
+        <br />
+        <br />
+        <center>
             @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { id = "tutorsearchform" }))
             {
                 @Html.TextBox("searching", "", new { @class = "form-control", @placeholder = "Search Tutor" })
@@ -199,41 +246,45 @@
         <br />
         <br />
 
-        <table class="table table-striped" id="myTutorSearchResulTable">
-            <thread>
-                <tr>
-                    <th>Tutor Name</th>
-                    <th>Tutor State</th>
-                    <th>Tutor City</th>
-                    <th>Tutor PhoneNumber</th>
-                    <th>Tutor Email Address</th>
-                    <th>Tutor Address</th>
-                </tr>
-            </thread>
-            @if (Model.Count() ==0)
-            {
-                <tr>
-                    <td colspan="3" style="color:red">
-                        No tutors found
-                    </td>
-                </tr>
-            }
-            else
-            {
-                foreach (var item in Model)
+        @*<table class="table table-striped" id="myTutorSearchResulTable">
+                <thread>
+                    <tr>
+                        <th>Tutor Name</th>
+                        <th>Tutor State</th>
+                        <th>Tutor City</th>
+                        <th>Tutor PhoneNumber</th>
+                        <th>Tutor Email Address</th>
+                        <th>Tutor Address</th>
+                    </tr>
+                </thread>
+                @if (Model.Count() ==0)
                 {
                     <tr>
-                        <td>@item.Name</td>
-                        <td>@item.State</td>
-                        <td>@item.City</td>
-                        <td>@item.PhoneNumber</td>
-                        <td>@item.EmailAddress</td>
-                        <td>@item.Address</td>
+                        <td colspan="3" style="color:red">
+                            No tutors found
+                        </td>
                     </tr>
                 }
-            }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.State</td>
+                            <td>@item.City</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.EmailAddress</td>
+                            <td>@item.Address</td>
+                        </tr>
+                    }
+                }
 
-        </table>*@
+            </table>*@
+
+    </div>
+
+
 
     <input type="hidden" id="keyword" value="home tuition agency">
 
@@ -379,29 +430,58 @@
 
 
 
-    <hr />
 
-    <h2 style="text-align:center">Why Us?</h2>
-    <p style="text-align:center">
-        There are plenty of institutes and tuition centres to choose from,
-        especially when it comes to online tuition classes as we're living in the Internet era.
-        You can check through the reviews and ratings of different tuition centres and tutors available with <b>Find my tutor</b> to find the best one for yourself.
-    </p>
-    @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+    <section class="section">
+        <div class="col-md-4">
+            <p class="sectionTag text-big">Why Us?</p>
+            <p class="sectionSubTag text-small">
+                There are plenty of institutes and tuition centres to choose from,
+                especially when it comes to online tuition classes as we're living in the Internet era.
+                You can check through the reviews and ratings of different tuition centres and tutors available with <b>Find my tutor</b> to find the best one for yourself.
+            </p>
+            @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+        </div>
+        <div class="thumbnail">
+            <img src="~/Content/images/7xm.xyz569099.jpg" 
+                 alt=""
+                 class="imgFluid" />
+        </div>
+    </section>
 
-    <div class="row">
-        <div class="col-md-4" style=" width: 50%; margin: 60px auto 60px auto; text-align: left; line-height: 1.5;">
-            <h2>Why we are helpful for tutors? </h2>
-            <p>We provide you with a complete business package and easy connection so you can focus on helping students.</p>
+    <section class="section section-left">
+
+        <div class="col-md-4">
+            <p class="sectionTag text-big">Why we are helpful for tutors? </p>
+            <p class="sectionSubTag text-small">
+                We provide you with a complete business package and easy connection so you can focus on helping students.
+            </p>
             @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
 
         </div>
-        <div class="col-md-4" style=" width: 50%; margin: 60px auto 60px auto; text-align: left; line-height: 1.5;">
-            <h2>Finding your child's perfect tutor</h2>
-            <p>Looking through tutor profiles from the search results, you can talk in real time to as many tutors as you want to discuss your child's needs.</p>
+        <div class="thumbnail">
+               <img src="~/Content/images/7xm.xyz862165.jpg" 
+                 alt=""
+                 class="imgFluid" />
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="col-md-4">
+            <p class="sectionTag text-big">Finding your child's perfect tutor</p>
+            <p class="sectionSubTag text-small">
+                Looking through tutor profiles from the search results, you can talk in real time to as many tutors as you want to discuss your child's needs.
+            </p>
             @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
         </div>
-    </div>
+        <div class="thumbnail">
+
+            <img src="~/Content/images/7xm.xyz486813.jpg" 
+            alt=""
+            class="imgFluid" />
+        </div>
+    </section>
+
 
 </body>
 </html>
