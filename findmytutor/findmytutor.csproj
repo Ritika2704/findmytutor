@@ -141,6 +141,7 @@
     <Compile Include="Models\Entities\cities.cs" />
     <Compile Include="Models\Entities\States.cs" />
     <Compile Include="Models\Entities\Tutor.cs" />
+    <Compile Include="Models\FilterModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\TutorSearchModel.cs" />

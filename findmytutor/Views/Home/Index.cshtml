@@ -1,4 +1,7 @@
-﻿@model IEnumerable<findmytutor.Models.TutorSearchModel>
+﻿@using findmytutor.Models;
+@model IEnumerable<findmytutor.Models.TutorSearchModel>
+
+@*@model IEnumerable<findmytutor.Models.TutorSearchModel>*@
 @*@using findmytutor.Models;
     @model Tutor*@
 
@@ -18,6 +21,7 @@
         html {
             scroll-behavior: smooth;
         }
+
         .inputGroup .lff {
             padding: 10px 20px;
             width: 100%;
@@ -184,8 +188,8 @@
             margin: 50px 0;
             position: relative;
         }
+
         .jumbotron {
-           
             background-image: url('../../content/images/7xm.xyz569099.jpg');
             background-repeat: no-repeat;
             background-size: 1200px 600px;
@@ -201,12 +205,15 @@
             max-width: 80%;
             margin: auto;
         }
+
         .section-left {
             flex-direction: row-reverse;
         }
+
         .col-md-4 {
             padding: 0px 65px;
         }
+
         .thumbnail img {
             width: 250px;
             height: 300px;
@@ -214,6 +221,7 @@
             border-radius: 25px;
             margin-top: 17px;
         }
+
         .sectionTag {
             padding: 16px 0;
         }
@@ -225,7 +233,6 @@
         .text-small {
             font-size: 18.5px;
         }
-        
     </style>
 
 </head>
@@ -241,12 +248,15 @@
                 @Html.TextBox("searching", "", new { @class = "form-control", @placeholder = "Search Tutor" })
                 <br />
                 <input type="button" id="mySubmitBtn" value=" Find a tutor" class="btn btn-sm btn-success" />
+                @Html.DropDownList("stateid", ViewBag.StatesTb1 as SelectList, "--Select State--", new { @class = "form-control" })
+                @Html.DropDownList("cityid", ViewBag.citiesTb1 as SelectList, "--Select City--", new { @class = "form-control" })
+
             }
         </center>
         <br />
         <br />
 
-        @*<table class="table table-striped" id="myTutorSearchResulTable">
+        <table class="table table-striped" id="myTutorSearchResulTable">
                 <thread>
                     <tr>
                         <th>Tutor Name</th>
@@ -280,7 +290,7 @@
                     }
                 }
 
-            </table>*@
+            </table>
 
     </div>
 
@@ -442,7 +452,7 @@
             @*<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
         </div>
         <div class="thumbnail">
-            <img src="~/Content/images/7xm.xyz569099.jpg" 
+            <img src="~/Content/images/7xm.xyz569099.jpg"
                  alt=""
                  class="imgFluid" />
         </div>
@@ -459,7 +469,7 @@
 
         </div>
         <div class="thumbnail">
-               <img src="~/Content/images/7xm.xyz862165.jpg" 
+            <img src="~/Content/images/7xm.xyz862165.jpg"
                  alt=""
                  class="imgFluid" />
         </div>
@@ -476,9 +486,9 @@
         </div>
         <div class="thumbnail">
 
-            <img src="~/Content/images/7xm.xyz486813.jpg" 
-            alt=""
-            class="imgFluid" />
+            <img src="~/Content/images/7xm.xyz486813.jpg"
+                 alt=""
+                 class="imgFluid" />
         </div>
     </section>
 

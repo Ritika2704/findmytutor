@@ -11,8 +11,15 @@ namespace findmytutor.Controllers
     public class HomeController : Controller
     {
         private FindMyTutorContext db = new FindMyTutorContext();
-        public ActionResult Index(string searching)
+        public ActionResult Index(string searching, string stateid, string cityid)
         {
+            List<FilterModel> filterSearch = new List<FilterModel>();
+            List<Models.Entities.States> statelist = db.States.OrderBy(x => x.statename).ToList();
+            ViewBag.StatesTb1 = new SelectList(statelist, "state_id", "statename");
+
+            List<Models.Entities.cities> citylist = db.cities.OrderBy(x => x.city_name).ToList();
+            ViewBag.citiesTb1 = new SelectList(citylist, "city_Id", "city_name", "state_id");
+
             List<TutorSearchModel> tutorSearch = new List<TutorSearchModel>();
 
             try
