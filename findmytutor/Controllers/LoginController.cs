@@ -45,7 +45,7 @@ namespace findmytutor.Controllers
                         if(checkPass == hashedPass)
                         {
                             //Success
-                            //FormsAuthentication.
+                            FormsAuthentication.SetAuthCookie(login.Email, false);
                             return RedirectToAction("Index", "Dashboard");
                         }
                         else

@@ -24,19 +24,67 @@ namespace findmytutor.Controllers
 
             try
             {
-                if (!string.IsNullOrEmpty(searching))
+                if(!string.IsNullOrEmpty(stateid) && !string.IsNullOrEmpty(cityid))
                 {
-                    tutorSearch = db.tutors.Where(x => x.Name.Contains(searching) || x.Address.Contains(searching) || x.PhoneNumber.Contains(searching)).Select(x => new TutorSearchModel
+                    int cityidInt = Convert.ToInt32(cityid);
+                    int stateidInt = Convert.ToInt32(stateid);
+
+                    tutorSearch = db.tutors.Where(x => x.City == cityidInt && x.State == stateidInt).Select(x => new TutorSearchModel
                     {
                         Name = x.Name,
-                        State = db.States.Where(y=>y.state_id==x.State).Select(y=>y.statename).FirstOrDefault(),
-                        City = db.cities.Where(y=>y.city_id == x.City).Select(y => y.city_name).FirstOrDefault(),
+                        State = db.States.Where(y => y.state_id==x.State).Select(y => y.statename).FirstOrDefault(),
+                        City = db.cities.Where(y => y.city_id == x.City).Select(y => y.city_name).FirstOrDefault(),
                         EmailAddress = x.EmailAddress,
                         PhoneNumber = x.PhoneNumber,
                         Address = x.Address
                     }
                     ).ToList();
                 }
+                else if(!string.IsNullOrEmpty(stateid))
+                {
+                    int stateidInt = Convert.ToInt32(stateid);
+                    tutorSearch = db.tutors.Where(x => x.State == stateidInt).Select(x => new TutorSearchModel
+                    {
+                        Name = x.Name,
+                        State = db.States.Where(y => y.state_id==x.State).Select(y => y.statename).FirstOrDefault(),
+                        City = db.cities.Where(y => y.city_id == x.City).Select(y => y.city_name).FirstOrDefault(),
+                        EmailAddress = x.EmailAddress,
+                        PhoneNumber = x.PhoneNumber,
+                        Address = x.Address
+                    }
+                    ).ToList();
+                }
+                else if(!string.IsNullOrEmpty(cityid))
+                {
+                    int cityidInt = Convert.ToInt32(cityid);
+                    tutorSearch = db.tutors.Where(x => x.City == cityidInt).Select(x => new TutorSearchModel
+                    {
+                        Name = x.Name,
+                        State = db.States.Where(y => y.state_id==x.State).Select(y => y.statename).FirstOrDefault(),
+                        City = db.cities.Where(y => y.city_id == x.City).Select(y => y.city_name).FirstOrDefault(),
+                        EmailAddress = x.EmailAddress,
+                        PhoneNumber = x.PhoneNumber,
+                        Address = x.Address
+                    }
+                    ).ToList();
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(searching))
+                    {
+                        tutorSearch = db.tutors.Where(x => x.Name.Contains(searching) || x.Address.Contains(searching) || x.PhoneNumber.Contains(searching)).Select(x => new TutorSearchModel
+                        {
+                            Name = x.Name,
+                            State = db.States.Where(y => y.state_id==x.State).Select(y => y.statename).FirstOrDefault(),
+                            City = db.cities.Where(y => y.city_id == x.City).Select(y => y.city_name).FirstOrDefault(),
+                            EmailAddress = x.EmailAddress,
+                            PhoneNumber = x.PhoneNumber,
+                            Address = x.Address
+                        }
+                        ).ToList();
+                    }
+                }
+               
             }
             catch (Exception ex)
             {

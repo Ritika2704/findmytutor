@@ -11,6 +11,7 @@ namespace findmytutor.Controllers
         // GET: Dashboard
         public ActionResult Index()
         {
+            string current = System.Web.HttpContext.Current.User.Identity.Name;
             return View();
         }
     }

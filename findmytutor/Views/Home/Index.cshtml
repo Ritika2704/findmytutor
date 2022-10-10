@@ -505,8 +505,9 @@
                 var searchinput = $("#searching").val();
 
                 if (searchinput == "") {
-                    alert("Please input a search query");
-                    return false;
+                    $("#tutorsearchform").submit();
+                    //alert("Please input a search query");
+                    //return false;
                 }
                 else {
 
